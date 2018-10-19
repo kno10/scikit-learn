@@ -396,5 +396,5 @@ def test_processing_order():
     Y = [[0], [10], [-10], [25]]
     clust = OPTICS(min_samples=3, max_eps=15).fit(Y)
     assert_array_equal(clust.reachability_, [np.inf, 10, 10, 15])
-    assert_array_equal(clust.core_distances_, [10, 15, 20, 25])
+    assert_array_equal(clust.core_distances_, [10, 15, np.inf, np.inf])
     assert_array_equal(clust.ordering_, [0, 1, 2, 3])
